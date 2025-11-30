@@ -1,0 +1,195 @@
+
+.doctors {
+  padding: 20px;
+  background: #f9fbfd;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  font-family: "Poppins", sans-serif;
+  color: #333;
+}
+
+/* Alerts */
+.doctors .alert,
+.addDoctor .alert {
+  margin-bottom: 12px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.doctors .alert.error,
+.addDoctor .alert.error {
+  background: #ffe5e5;
+  color: #d62828;
+  border: 1px solid #f5b5b5;
+}
+
+.doctors .alert.success,
+.addDoctor .alert.success {
+  background: #e7f9ef;
+  color: #1b7a3f;
+  border: 1px solid #b2e5c5;
+}
+
+/* Search input */
+.doctors .search-input {
+  margin-bottom: 14px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 280px;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.2s ease-in-out;
+}
+
+.doctors .search-input:focus {
+  border: 1px solid #0077b6;
+  box-shadow: 0 0 4px rgba(0,119,182,0.3);
+}
+
+/* Table */
+.doctors .data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.doctors .data-table th {
+  background: #023e8a;
+  color: #fff;
+  padding: 12px 10px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.doctors .data-table td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #e6e9ef;
+  font-size: 14px;
+}
+
+.doctors .data-table tr:hover td {
+  background: #f1f7ff;
+}
+
+.doctors .data-table .empty {
+  text-align: center;
+  color: #777;
+  font-style: italic;
+  padding: 20px;
+}
+
+
+.doctors .btn,
+.addDoctor .btn {
+  display: inline-flex;           
+  align-items: center;       
+  justify-content: center;  
+  gap: 6px;                     
+  padding: 4px 16px;              
+  margin: 0 4px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #0077b6;
+  color: #fff;
+  transition: background 0.2s ease-in-out;
+}
+
+
+.doctors .btn:hover,
+.addDoctor .btn:hover {
+  background: #005f8a;
+}
+
+.doctors .btn.small {
+  font-size: 16px;
+  padding: 4px 8px;
+}
+
+.doctors .btn.danger {
+  background: #d62828;
+}
+
+.doctors .btn.danger:hover {
+  background: #a71d1d;
+}
+
+.addDoctor .btn.primary {
+  background: #023e8a;
+}
+
+.addDoctor .btn.primary:hover {
+  background: #012b60;
+}
+
+
+.addDoctor {
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  max-width: 97%;
+  margin: 0 auto;
+}
+
+/* Form */
+.addDoctor .form {
+  display: flex;
+  flex-direction: column;
+}
+
+.addDoctor .grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.addDoctor label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.addDoctor input,
+.addDoctor select {
+  margin-top: 6px;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.2s ease-in-out;
+}
+
+.addDoctor input:focus,
+.addDoctor select:focus {
+  border: 1px solid #0077b6;
+  box-shadow: 0 0 4px rgba(0,119,182,0.3);
+}
+
+/* Form hint */
+.addDoctor .hint {
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+}
+
+/* Form actions */
+.addDoctor .form-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+

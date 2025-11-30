@@ -1,0 +1,109 @@
+/* Register.css */
+
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f4f6fb;
+  font-family: 'Poppins', sans-serif;
+}
+
+.register-card {
+  background: #fff;
+  padding: 30px 25px;
+  border-radius: 12px;
+  width: 400px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  position: relative;
+  text-align: center;
+}
+
+.register-card h2 {
+  margin-bottom: 10px;
+  font-size: 26px;
+  color: #023e8a;
+}
+
+.register-card .subtitle {
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.register-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.register-card input,
+.register-card select {
+  padding: 12px;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.register-card input:focus,
+.register-card select:focus {
+  border-color: #023e8a;
+}
+
+.register-card .btn {
+  background: #023e8a;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.register-card .btn:hover {
+  background: #0353a4;
+}
+
+.register-card .cancel-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #888;
+  transition: color 0.3s ease;
+}
+
+.register-card .cancel-btn:hover {
+  color: #000;
+}
+
+.extra-text {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.extra-text a {
+  color: #023e8a;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.extra-text a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .register-card {
+    width: 90%;
+    padding: 20px;
+  }
+}
+
+

@@ -1,0 +1,150 @@
+.patient-dashboard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  background-color: #ffffff;
+}
+
+/* Dashboard wrapper */
+.patient-dashboard .dashboard-wrapper {
+  display: flex;
+  height: calc(100vh - 40px);
+  width: 100%;
+}
+
+/* Sidebar */
+.patient-dashboard .sidebar {
+  width: 200px;
+  background-color: #0077b6;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  /* box-shadow: 2px 0 5px rgba(0,0,0,0.1); */
+  position: sticky;
+  top: 0; 
+  height: 100%; 
+  overflow-y: auto;
+}
+
+.patient-dashboard .sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.patient-dashboard .sidebar li {
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.patient-dashboard .sidebar li:hover {
+  background-color: #274690;
+}
+
+.patient-dashboard .sidebar li.active {
+  background-color: #3b82f6;
+  font-weight: 600;
+}
+
+/* Main content */
+.patient-dashboard .main-content {
+  flex-grow: 1;
+  padding: 24px;
+  background-color: #ffffff;
+  overflow-y: auto;
+}
+
+/* Scrollbar inside main content */
+.patient-dashboard .main-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.patient-dashboard .main-content::-webkit-scrollbar-thumb {
+  background-color: #3b82f6;
+  border-radius: 4px;
+}
+
+.patient-dashboard .main-content::-webkit-scrollbar-track {
+  background-color: #f8faff;
+}
+
+.patient-dashboard .sidebar ul li.logout {
+  color: #ffffff;                  
+  background-color: #e74c3c; 
+  padding: 10px 15px;           
+  margin-top: 20px;              
+  border-radius: 8px;  
+  text-align: center;            
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+  transition: all 0.3s ease;     
+}
+
+.patient-dashboard .sidebar ul li.logout:hover {
+  background-color: #c0392b; 
+  transform: translateY(-2px);  
+  box-shadow: 0 6px 10px rgba(0,0,0,0.15); 
+}
+
+
+@media (max-width: 992px) {
+  .patient-dashboard .sidebar {
+    width: 160px;
+    padding: 16px;
+  }
+
+  .patient-dashboard .sidebar li {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .patient-dashboard .main-content {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .patient-dashboard .sidebar {
+    width: 120px;
+    padding: 10px;
+    align-items: center;
+  }
+
+  .patient-dashboard .sidebar li {
+    font-size: 13px;
+    text-align: center;
+    padding: 8px 10px;
+  }
+
+  .patient-dashboard .main-content {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .patient-dashboard .sidebar {
+    width: 80px;
+    padding: 8px 5px;
+  }
+
+  .patient-dashboard .sidebar li {
+    font-size: 12px;
+    text-align: center;
+    padding: 6px 4px;
+  }
+
+  .patient-dashboard .main-content {
+    padding: 10px;
+  }
+}
+
+
+
+

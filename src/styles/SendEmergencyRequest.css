@@ -1,0 +1,144 @@
+/* Container */
+.emergency-request-container {
+  max-width: 90%;
+  margin: 30px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
+
+/* Heading */
+.emergency-request-container h2 {
+  text-align: center;
+  color: #d62828;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.emergency-request-container h3 {
+  margin-top: 30px;
+  font-size: 22px;
+  color: #333;
+}
+
+/* Form */
+.emergency-request-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.emergency-request-container label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  display: block;
+  color: #444;
+}
+
+.emergency-request-container input,
+.emergency-request-container select,
+.emergency-request-container textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.emergency-request-container textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Button */
+.emergency-request-container button {
+  background: #d62828;
+  color: #fff;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.emergency-request-container button:hover:not(:disabled) {
+  background: #b71c1c;
+}
+
+.emergency-request-container button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* Response message */
+.emergency-request-container p {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #007bff;
+}
+
+/* Emergency list (cards) */
+.emergency-request-container .emergency-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+/* Emergency card */
+.emergency-request-container .emergency-card {
+  background: #fafafa;
+  border: 1px solid #ddd;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.emergency-request-container .emergency-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.emergency-request-container .emergency-card h4 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  color: #d62828;
+}
+
+.emergency-request-container .emergency-card p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #444;
+}
+
+/* Date styling */
+.emergency-request-container .emergency-card .date {
+  font-size: 12px;
+  color: #666;
+  margin-top: 8px;
+}
+
+/* Intensity highlight */
+.emergency-request-container .emergency-card p strong {
+  color: #222;
+}
+
+.emergency-request-container .emergency-card .intensity-low {
+  color: green;
+  font-weight: bold;
+}
+
+.emergency-request-container .emergency-card .intensity-moderate {
+  color: orange;
+  font-weight: bold;
+}
+
+.emergency-request-container .emergency-card .intensity-high {
+  color: red;
+  font-weight: bold;
+}

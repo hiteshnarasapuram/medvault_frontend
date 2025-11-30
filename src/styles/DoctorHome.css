@@ -1,0 +1,227 @@
+/* DoctorHome.css */
+
+/* Container */
+.doctor-home {
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+
+/* Headings */
+.doctor-home h2 {
+  color: #0077b6;
+  margin-bottom: 20px;
+}
+
+.doctor-home h3 {
+  color: #023e8a;
+  margin-bottom: 10px;
+}
+
+/* Charts container */
+.doctor-home .charts-container {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.doctor-home .chart-box {
+  flex: 1 1 300px;
+  min-width: 300px;
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Appointments list */
+.doctor-home .appointments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Appointment card */
+.doctor-home .appointment-card {
+  background-color: #ffffff;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Status badges */
+.doctor-home .status {
+  padding: 3px 8px;
+  border-radius: 5px;
+  font-weight: bold;
+  color: white;
+  text-transform: capitalize;
+}
+
+.doctor-home .status.pending {
+  background-color: #36A2EB;
+}
+
+.doctor-home .status.confirmed {
+  background-color: #4CAF50;
+}
+
+.doctor-home .status.completed {
+  background-color: #FFCE56;
+  color: #000; /* darker text for yellow */
+}
+
+.doctor-home .status.cancelled {
+  background-color: #FF6384;
+}
+
+/* Buttons inside appointment cards */
+.doctor-home .appointment-card button {
+  margin-top: 8px;
+  width: fit-content;
+  background-color: #00b4d8;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.doctor-home .appointment-card button:hover {
+  background-color: #0096c7;
+}
+
+/* Modals common styling */
+.doctor-home .modal-overlay,
+.doctor-home .modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.doctor-home .modal-content {
+  background-color: #ffffff;
+  padding: 20px 25px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Close button */
+.doctor-home .modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Modal headings */
+.doctor-home .modal-content h3 {
+  color: #0077b6;
+  margin-bottom: 15px;
+}
+
+/* Textareas */
+.doctor-home .modal-content textarea {
+  width: 100%;
+  min-height: 60px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  margin-bottom: 15px;
+  font-family: Arial, sans-serif;
+}
+
+/* Slot buttons (for reschedule or update slots) */
+.doctor-home .slots-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.doctor-home .slot-button {
+  background-color: #00b4d8;
+  color: #fff;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  flex: 1 1 100px;
+  text-align: center;
+  transition: background 0.3s;
+}
+
+.doctor-home .slot-button:hover {
+  background-color: #0096c7;
+}
+
+.doctor-home .slot-button.selected {
+  background-color: #0077b6;
+  font-weight: bold;
+}
+
+/* Modal action buttons */
+.doctor-home .modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.doctor-home .modal-actions button {
+  background-color: #00b4d8;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.doctor-home .modal-actions button:hover {
+  background-color: #0096c7;
+}
+
+.doctor-home .modal-actions button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Star rating (for feedback) */
+.doctor-home .star-rating span {
+  font-size: 24px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.doctor-home .star-rating .selected {
+  color: gold;
+}
+
+.doctor-home .star-rating span:not(.selected) {
+  color: lightgray;
+}

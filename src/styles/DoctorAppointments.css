@@ -1,0 +1,212 @@
+/* Container */
+.appointments-page .appointments-container {
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+
+/* Tabs */
+.appointments-page .btn {
+  background-color: #00b4d8;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.appointments-page .btn.primary, .btn:hover {
+  background-color: #0096c7;
+}
+
+.appointments-page .btn + .btn {
+  margin-left: 10px;
+}
+
+/* Message */
+.appointments-page .message {
+  color: #000000;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+/* Filter bar (search + date + status) */
+.appointments-page .appointments-container > div input,
+.appointments-page .appointments-container > div select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+/* Appointments list */
+.appointments-page .appointments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.appointments-page .appointment-card {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 15px 20px;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.appointments-page .appointment-card strong {
+  color: #000000;
+}
+
+.appointments-page .status-control {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.appointments-page .status-control select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* Reschedule info */
+.appointments-page .reschedule-info {
+  background-color: #e0f7fa;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+/* Slots list */
+.appointments-page .slots-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.appointments-page .slots-list li {
+  background-color: #ffffff;
+  padding: 10px 15px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.appointments-page .slots-list button {
+  background-color: #00b4d8;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.appointments-page .slots-list button:hover {
+  background-color: #0096c7;
+}
+
+/* Create Slot Form */
+.appointments-page .slot-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: #ffffff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+  max-width: 400px;
+}
+
+.appointments-page .slot-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  color: #0077b6;
+  font-size: 14px;
+}
+
+.appointments-page .slot-form input {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-top: 4px;
+}
+
+.appointments-page .slot-form button {
+  width: fit-content;
+  background-color: #00b4d8;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.appointments-page .slot-form button:hover {
+  background-color: #0096c7;
+}
+
+
+/* Pagination Styling */
+.appointments-page .pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+  gap: 10px;
+  font-family: "Poppins", sans-serif;
+}
+
+.appointments-page .pagination button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.appointments-page .pagination button:hover {
+  background-color: #0056b3;
+  transform: translateY(-1px);
+}
+
+.appointments-page .pagination button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.appointments-page .pagination span {
+  font-weight: 500;
+  color: #333;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background-color: #f8f9fa;
+  border: 1px solid #e0e0e0;
+}
+
+.appointments-page .status-control {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+

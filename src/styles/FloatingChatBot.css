@@ -1,0 +1,87 @@
+/* Floating button */
+.floating-chat-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  background-color: #0077ff;
+  color: #fff;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+
+/* Chat window */
+/* .floating-chat-window {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 350px;
+  max-height: 500px;
+  border: 1px solid gray;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 1000;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+} */
+
+.floating-chat-window {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 400px;         /* wider */
+  height: 500px;        /* taller */
+  border: 1px solid gray;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+/* Optional: header */
+.floating-chat-header {
+  background-color: #0077ff;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Scrollable chat messages */
+.floating-chat-messages {
+  padding: 10px;
+  flex: 1;
+  overflow-y: auto;
+  background-color: #ffffff;
+}
+
+/* Input area */
+.floating-chat-input {
+  display: flex;
+  gap: 5px;
+  padding: 10px;
+}
+
+.floating-chat-input input {
+  flex: 1;
+  padding: 5px;
+}
+
+.floating-chat-input button {
+  padding: 5px 10px;
+  background-color: #0077ff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}

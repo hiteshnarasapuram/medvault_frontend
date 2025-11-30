@@ -1,0 +1,192 @@
+/* Main container */
+.history-container {
+  font-family: "Inter", sans-serif;
+  color: #0b1f3a;
+  padding: 24px;
+  background: #f8fafc;
+  min-height: 100vh;
+}
+
+/* Title */
+.history-container h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #023e8a;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.history-container .add-history {
+  background: #ffffff;
+  border: 1px solid #e5e9f2;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 4px 8px rgba(2, 62, 138, 0.05);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.history-container .add-history h3 {
+  width: 100%;
+  color: #0077b6;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+/* Inputs & textareas */
+.history-container .add-history input,
+.history-container .add-history select,
+.history-container .add-history textarea {
+  flex: 1 1 220px;
+  border: 1px solid #cfd7e3;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.history-container .add-history textarea {
+  flex: 1 1 100%;
+  min-height: 80px;
+  resize: vertical;
+}
+
+.history-container .add-history input:focus,
+.history-container .add-history select:focus,
+.history-container .add-history textarea:focus {
+  border-color: #0077b6;
+  box-shadow: 0 0 0 3px rgba(0, 119, 182, 0.1);
+}
+
+/* Add button */
+.history-container .add-history button {
+  background: linear-gradient(90deg, #0077b6, #00b4d8);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.history-container .add-history button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 119, 182, 0.2);
+}
+
+
+.history-container .history-list {
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #e5e9f2;
+  box-shadow: 0 4px 8px rgba(2, 62, 138, 0.05);
+  padding: 20px;
+  overflow-x: auto;
+}
+
+.history-container .history-list h3 {
+  color: #0077b6;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+/* Table */
+.history-container .history-list table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.history-container .history-list th {
+  background: #0077b6;
+  color: #fff;
+  padding: 12px 14px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.history-container .history-list td {
+  padding: 12px 14px;
+  font-size: 14px;
+  border-bottom: 1px solid #eef2f7;
+}
+
+.history-container .history-list tr:hover td {
+  background-color: #f1faff;
+}
+
+/* Input fields inside table */
+.history-container .history-list input,
+.history-container .history-list textarea {
+  width: 100%;
+  border: 1px solid #cfd7e3;
+  border-radius: 8px;
+  padding: 6px 8px;
+  font-size: 13px;
+  background: #f8fafc;
+}
+
+/* Action buttons */
+.history-container .history-list button {
+  border: none;
+  border-radius: 8px;
+  padding: 6px 10px;
+  margin: 2px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.history-container .history-list button:hover {
+  transform: translateY(-1px);
+}
+
+/* Edit / Save buttons */
+.history-container .history-list button:not(.delete-btn) {
+  background: #0077b6;
+  color: #fff;
+}
+
+.history-container .history-list button:not(.delete-btn):hover {
+  background: #0096c7;
+}
+
+/* Delete button */
+.history-container .history-list .delete-btn {
+  background: #e63946;
+  color: #fff;
+}
+
+.history-container .history-list .delete-btn:hover {
+  background: #c1121f;
+}
+
+/* No records */
+.history-container .history-list p {
+  text-align: center;
+  color: #7e8ca1;
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+@media (max-width: 768px) {.history-container 
+  .history-container .add-history {
+    flex-direction: column;
+  }
+
+  .history-container .history-list table {
+    font-size: 13px;
+  }
+
+  .history-container .history-list th,
+  .history-container .history-list td {
+    padding: 8px 10px;
+  }
+}

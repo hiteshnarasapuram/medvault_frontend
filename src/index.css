@@ -1,0 +1,58 @@
+/* index.css */
+
+/* Reset all defaults */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+/* Full-page setup */
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  font-family: 'Arial', sans-serif;
+  background-color: #ffffff; /* very light blue background */
+  color: #023e8a; 
+  overflow-y:auto;
+}
+
+/* Links */
+a {
+  color: #0077b6;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #00b4d8; /* skyblue hover */
+}
+
+/* Scrollbar styling (optional, nice for dashboard) */
+::-webkit-scrollbar {
+  display: block;
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #00b4d8;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f8faff;
+}
+
+/* Global buttons */
+button {
+  background-color: #00b4d8;
+  color: #fff;
+  /* border-radius: 8px; */
+  cursor: pointer;
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #0096c7;
+}

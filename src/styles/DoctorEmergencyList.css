@@ -1,0 +1,63 @@
+/* Container */
+.doctor-emergency-list {
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8faff;
+  min-height: 100vh;
+}
+
+/* Headings */
+.doctor-emergency-list h2 {
+  color: #c0392b;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #e74c3c; 
+  padding-bottom: 5px;
+}
+
+/* Emergency list */
+.doctor-emergency-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Each emergency item */
+.doctor-emergency-list li {
+  background-color: #ffffff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Strong labels */
+.doctor-emergency-list li strong {
+  color: #0077b6;
+}
+
+/* Accept button */
+.doctor-emergency-list button {
+  margin-top: 10px;
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 14px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .doctor-emergency-list li {
+    padding: 12px 15px;
+  }
+
+  .doctor-emergency-list button {
+    width: 100%;
+  }
+}

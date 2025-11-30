@@ -1,0 +1,76 @@
+/* PatientProfile.css */
+
+.patient-profile {
+  width: 100%;
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.patient-profile h2 {
+  color: #0077b6;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.patient-profile label {
+  display: block;
+  font-weight: bold;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  color: #023e8a;
+}
+
+.patient-profile input[type="text"],
+.patient-profile input[type="date"],
+.patient-profile input[type="file"],
+.patient-profile select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.patient-profile input[disabled],
+.patient-profile select[disabled] {
+  background-color: #f1f5f9;
+  color: #555;
+  cursor: not-allowed;
+}
+
+.patient-profile button {
+  margin-top: 20px;
+  background-color: #00b4d8;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.patient-profile button:hover {
+  background-color: #0096c7;
+}
+
+.patient-profile input[type="file"] {
+  padding: 5px 0;
+}
+
+.patient-profile select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.patient-profile * {
+  box-sizing: border-box;
+}

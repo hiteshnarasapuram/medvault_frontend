@@ -1,0 +1,215 @@
+
+.records-container {
+  font-family: "Inter", sans-serif;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 119, 182, 0.1);
+  color: #0b1f3a;
+  transition: all 0.3s ease;
+  animation: fadeIn 0.4s ease;
+}
+
+.records-container h2 {
+  color: #0077b6;
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.records-container .upload-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  background: #f0f8ff;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #cce5f9;
+}
+
+.records-container .upload-section input[type="text"],
+.records-container .upload-section input[type="file"] {
+  border: 2px solid #cce5f9;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  flex: 1 1 250px;
+  background: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.records-container .upload-section input:focus {
+  outline: none;
+  border-color: #0077b6;
+  box-shadow: 0 0 6px rgba(0, 119, 182, 0.2);
+}
+
+.records-container .upload-section button {
+  background: linear-gradient(90deg, #0077b6, #00b4d8);
+  border: none;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 119, 182, 0.2);
+}
+
+.records-container .upload-section button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 119, 182, 0.3);
+}
+
+.records-container .upload-section button:disabled {
+  background: #a0c4ff;
+  cursor: not-allowed;
+}
+
+.records-container .records-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.records-container .records-list li {
+  background: #f8fbff;
+  border: 1px solid #e2ecf9;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+}
+
+.records-container .records-list li:hover {
+  background: #e7f3ff;
+  transform: translateY(-2px);
+}
+
+.records-container .records-list li span {
+  font-weight: 500;
+  color: #023e8a;
+}
+
+.records-container .records-list button {
+  margin-left: 8px;
+  background: #0077b6;
+  border: none;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.records-container .records-list button:hover {
+  background: #005f8e;
+  transform: translateY(-1px);
+}
+
+.records-container .records-list .delete-btn {
+  background: #e63946;
+}
+
+records-container .records-list .delete-btn:hover {
+  background: #c62828;
+}
+
+.records-container .modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(11, 31, 58, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  animation: fadeIn 0.3s ease;
+}
+
+.records-container .modal-content {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 80%;
+  height: 85%;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 0.4s ease;
+}
+
+.records-container .modal-content h3 {
+  color: #0077b6;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.records-container .modal-content iframe {
+  flex: 1;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  background: #f8faff;
+}
+
+/* Close Button */
+.records-container .close-btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: #e63946;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.records-container .close-btn:hover {
+  background: #c62828;
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .records-container .modal-content {
+    width: 95%;
+    height: 80%;
+  }
+
+  .records-container .upload-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .records-container .upload-section input, .upload-section button {
+    width: 100%;
+  }
+}

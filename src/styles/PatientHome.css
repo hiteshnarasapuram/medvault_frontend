@@ -1,0 +1,271 @@
+/* PatientHome.css */
+
+/* .patient-home .patient-dashboard {
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  background-color: #ffffff;
+  overflow-y: auto; 
+} */
+
+/* Headings */
+.patient-home .patient-dashboard h2 {
+  color: #0077b6;
+  margin-bottom: 20px;
+}
+
+.patient-home .patient-dashboard h3 {
+  color: #023e8a;
+  margin-bottom: 10px;
+}
+
+/* Charts container */
+.patient-home .charts-container {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.patient-home .chart-box {
+  flex: 1 1 300px;
+  min-width: 300px;
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Appointments list */
+.patient-home .appointments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Appointment card */
+.patient-home .appointment-card {
+  background-color: #ffffff;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Status badges */
+.patient-home .status {
+  padding: 3px 8px;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #ffffff;
+  text-transform: capitalize;
+}
+
+.patient-home .status.pending {
+  background-color: #36A2EB;
+}
+
+.patient-home .status.confirmed {
+  background-color: #4CAF50;
+}
+
+.patient-home .status.completed {
+  background-color: #FFCE56;
+  color: #000; /* darker text for yellow */
+}
+
+.patient-home .status.cancelled {
+  background-color: #FF6384;
+}
+
+/* Buttons inside appointment cards */
+.patient-home .appointment-card button {
+  margin-top: 8px;
+  width: fit-content;
+  background-color: #00b4d8;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.patient-home .appointment-card button:hover {
+  background-color: #0096c7;
+}
+
+/* Modals common styling */
+.patient-home .modal-overlay,
+.patient-home .modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* semi-transparent overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.patient-home .modal-content {
+  background-color: #ffffff;
+  padding: 20px 25px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Close button */
+.patient-home .modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Headings */
+.patient-home .modal-content h3 {
+  color: #0077b6;
+  margin-bottom: 15px;
+}
+
+/* Textareas */
+.patient-home .modal-content textarea {
+  width: 100%;
+  min-height: 60px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ffffff;
+  resize: vertical;
+  margin-bottom: 15px;
+  font-family: Arial, sans-serif;
+}
+
+/* Slot buttons (for Reschedule) */
+.patient-home .slots-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.patient-home .slot-button {
+  background-color: #00b4d8;
+  color: #fff;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  flex: 1 1 100px;
+  text-align: center;
+  transition: background 0.3s;
+}
+
+.patient-home .cancel-btn:hover {
+  background-color: #e60000; /* darker red on hover */
+}
+
+.patient-home .slot-button:hover {
+  background-color: #0096c7;
+}
+
+.patient-home .slot-button.selected {
+  background-color: #0077b6;
+  font-weight: bold;
+}
+
+/* Modal actions buttons */
+.patient-home .modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.patient-home .modal-actions button {
+  background-color: #00b4d8;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+
+.patient-home .modal-actions button:hover {
+  background-color: #0096c7;
+}
+
+.patient-home .modal-actions button:disabled {
+  background-color: #ffffff;
+  cursor: not-allowed;
+}
+
+/* Star rating for Feedback modal */
+.patient-home .star-rating span {
+  font-size: 24px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.patient-home .star-rating .selected {
+  color: gold;
+}
+
+.patient-home .star-rating span:not(.selected) {
+  color: rgb(127, 105, 105);
+}
+
+/* Pagination container centered below the appointments list */
+.patient-home .pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 8px;
+  font-family: Arial, sans-serif;
+}
+
+/* Pagination buttons */
+.patient-home .pagination button {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  background-color: #f5f5f5;
+  color: #333;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.patient-home .pagination button:hover {
+  background-color: #e0e0e0;
+  border-color: #999;
+}
+
+.patient-home .pagination button:disabled {
+  background-color: #ffffff;
+  color: #ffffff;
+  cursor: not-allowed;
+  border-color: #ffffff;
+}
+
+/* Current page indicator */
+.patient-home .pagination span {
+  font-size: 14px;
+  color: #555;
+}

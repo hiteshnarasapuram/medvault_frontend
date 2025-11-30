@@ -1,0 +1,224 @@
+/* OverviewTab.css - Admin Dashboard Overview */
+
+/* Container */
+.overview-tab {
+  width: 100%;
+  padding: 25px;
+  background-color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Headings */
+.overview-tab h2 {
+  color: #0077b6;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.overview-tab h3 {
+  color: #023e8a;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+/* KPI Cards */
+.panel-grid {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-bottom: 35px;
+}
+
+.overview-tab .kpi-card {
+  flex: 1 1 200px;
+  min-width: 200px;
+  background-color: #ffffff;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+}
+
+.overview-tab .kpi-card:hover {
+  transform: translateY(-3px);
+}
+
+.overview-tab  .kpi-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.overview-tab  .kpi-value {
+  font-size: 24px;
+  font-weight: bold;
+  color: #0077b6;
+}
+
+/* Charts container */
+.overview-tab .charts-container {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+.overview-tab  .chart-box {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  flex: 1 1 300px;
+  max-width: 400px; /* limit chart width */
+  text-align: center;
+}
+
+.overview-tab .chart-box canvas {
+  max-height: 250px; /* limit chart height */
+  margin: 0 auto;
+}
+
+/* Table */
+.overview-tab .data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 25px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.overview-tab .data-table th, .data-table td {
+  padding: 12px 15px;
+  text-align: left;
+  font-size: 14px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.overview-tab .data-table th {
+  background-color: #f0f4f8;
+  color: #023e8a;
+  font-weight: 600;
+}
+
+.overview-tab .data-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Buttons in table */
+.overview-tab .btn {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.overview-tab .btn.small {
+  font-size: 12px;
+  padding: 5px 10px;
+}
+
+.overview-tab .btn.primary {
+  background-color: #00b4d8;
+  color: #fff;
+}
+
+.overview-tab .btn.primary:hover {
+  background-color: #0096c7;
+}
+
+.overview-tab .btn.danger {
+  background-color: #ff4c4c;
+  color: #fff;
+}
+
+.overview-tab .btn.danger:hover {
+  background-color: #e03b3b;
+}
+
+/* Empty state */
+.overview-tab .empty {
+  text-align: center;
+  color: #888;
+  padding: 15px;
+  font-style: italic;
+}
+/* .overview-tab .charts-container {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: start;
+  margin-top: 30px;
+} */
+
+/* .overview-tab .chart-box {
+  flex: 1 1 300px;
+  min-width: 300px;
+  max-width: 400px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.overview-tab .chart-box h3 {
+  margin-bottom: 15px;
+  color: #023e8a;
+  text-align: center;
+} */
+
+
+.overview-tab .charts-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;  
+  justify-content: center;
+}
+
+.overview-tab .chart-box {
+  flex: 1 1 45%;         
+  min-width: 300px;       
+  max-width: 900px;       
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.overview-tab .chart-box h3 {
+  margin-bottom: 15px;
+  color: #023e8a;
+  text-align: center;
+}
+.overview-tab .chart-wrapper {
+  width: 100%;
+  height: 250px; 
+}
+
+
+
+
+/* Responsive */
+@media (max-width: 900px) {
+  .charts-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .chart-box {
+    max-width: 90%;
+  }
+  
+  .panel-grid {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

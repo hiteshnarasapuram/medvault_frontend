@@ -1,0 +1,119 @@
+/* Container */
+.doctor-feedback-container {
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f0f8ff; 
+  min-height: 85vh;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+/* Heading */
+.doctor-feedback-container h2 {
+  color: #0077b6; 
+  margin-bottom: 15px;
+  border-bottom: 2px solid #00b4d8; 
+  padding-bottom: 5px;
+}
+
+/* Message */
+.doctor-feedback-container .message {
+  color: #0077b6;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Table */
+.doctor-feedback-container .appointments-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.doctor-feedback-container .appointments-table th,
+.doctor-feedback-container .appointments-table td {
+  padding: 12px;
+  border: 1px solid #b3d4fc; 
+  text-align: left;
+}
+
+.doctor-feedback-container .appointments-tab.doctor-feedback-container le th {
+  background-color: #00b4d8; 
+  color: #fff;
+  font-weight: bold;
+}
+
+.doctor-feedback-container .appointments-table tr:nth-child(even) {
+  background-color: #e0f7ff; 
+}
+
+.doctor-feedback-container .appointments-table tr:hover {
+  background-color: #ccefff; 
+}
+
+/* Loading & empty state text */
+.doctor-feedback-container p {
+  color: #0077b6;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .doctor-feedback-container {
+    padding: 15px;
+  }
+
+  .doctor-feedback-container .appointments-table th,
+  .doctor-feedback-container .appointments-table td {
+    padding: 8px;
+  }
+}
+
+.doctor-feedback-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #023e8a;
+}
+
+.doctor-feedback-container .feedback-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+
+.doctor-feedback-container .feedback-card {
+  background: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.doctor-feedback-container .feedback-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.doctor-feedback-container .feedback-rating {
+  color: #ffb703;
+  font-weight: bold;
+}
+
+.doctor-feedback-container .rating-number {
+  color: #555;
+  font-size: 13px;
+}
+
+.doctor-feedback-container .feedback-text {
+  font-size: 15px;
+  color: #333;
+  margin: 0;
+}
+
+.doctor-feedback-container .message {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #0077b6;
+}
