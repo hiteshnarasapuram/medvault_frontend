@@ -15,7 +15,7 @@ function PatientHistory() {
   });
   const [editingId, setEditingId] = useState(null);
 
-  //const token = localStorage.getItem("token");
+  const token = localStorage.getItem("token");
 
   useEffect(() => {
   if (!message) return; 
@@ -59,7 +59,7 @@ function PatientHistory() {
         });
         setLoading(false);
       });
-  }, [apiBase, token]);
+  }, [ token]);
 
   // Add history
   const handleAddHistory = () => {

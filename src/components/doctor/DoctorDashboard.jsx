@@ -7,6 +7,8 @@ import DoctorAppointments from "./DoctorAppointments";
 import DoctorFeedback from "./DoctorFeedback";
 import DoctorPatients from "./DoctorPatients";
 import DoctorEmergencyList from "./DoctorEmergencyList";
+import Swal from "sweetalert2";
+
 
 import {API_BASE,buildAuthHeaders} from "../../utils";
 
@@ -18,7 +20,7 @@ function DoctorDashboard() {
   const [activeTab, setActiveTab] = useState("home");
   const navigate = useNavigate();
   //const API_BASE = "http://localhost:8080";
-  //const token = localStorage.getItem("token");
+  const token = localStorage.getItem("token");
 
   useEffect(() => {
     if (!token) {
@@ -65,25 +67,45 @@ const handleAppointmentsClick = async () => {
         setActiveTab("appointments");
         break;
       case "INCOMPLETE":
-        alert("Profile is incomplete. Please update all required fields.");
+        Swal.fire({
+          icon: "warning",
+          title: "Profile Incomplete",
+          text: "Please update all required fields.",
+        });
         setActiveTab("profile");
         break;
       case "PENDING":
-        alert("Your profile is under verification by the admin.");
+        Swal.fire({
+          icon: "info",
+          title: "Profile Under Review",
+          text: "Your profile is under verification by the admin.",
+        });
         setActiveTab("profile");
         break;
       case "REJECTED":
-        alert(
-          `Your profile was rejected. ${result.adminMessage ? "Reason: " + result.adminMessage : ""}`
-        );
+        Swal.fire({
+          icon: "error",
+          title: "Profile Rejected",
+          text: result.adminMessage
+            ? `Reason: ${result.adminMessage}`
+            : "Your profile was rejected.",
+        });
         setActiveTab("profile");
         break;
       default:
-        alert("Unexpected response. Please try again.");
+        Swal.fire({
+          icon: "error",
+          title: "Unexpected Error",
+          text: "Something went wrong. Please try again.",
+        });
         setActiveTab("profile");
     }
   } catch (err) {
-    alert("Error: " + err.message);
+    Swal.fire({
+      icon: "error",
+      title: "Error",
+      text: err.message,
+    });
   }
 };
 

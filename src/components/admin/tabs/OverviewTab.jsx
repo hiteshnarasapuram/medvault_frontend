@@ -38,7 +38,7 @@ function OverviewTab() {
   const totalAppointments = appointments.length;
 
   const todayAppointments = appointments.filter(
-    (appt) => appt.date === today
+    (appt) => appt.slotDate === today
   ).length;
 
   const completedAppointments = appointments.filter(

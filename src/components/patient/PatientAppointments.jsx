@@ -57,10 +57,11 @@ function PatientAppointments() {
         { method: "POST", headers: buildAuthHeaders() }
       );
 
-      const data = await res.text();
-      if (!res.ok) return Swal.fire({ icon: "error", title: "Booking Failed", text: data });
+      //const data = await res.text();
+      const json =await res.json();
+      if (!res.ok) return Swal.fire({ icon: "error", title: "Booking Failed", text: json.message });
 
-      Swal.fire({ icon: "success", title: "Appointment Booked", text: data });
+      Swal.fire({ icon: "success", title: "Appointment Booked",  text: json.message});
       setSelectedDoctor(null);
       setSlots([]);
       setSelectedSlot(null);

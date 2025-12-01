@@ -47,7 +47,7 @@ function DoctorEmergencyList() {
 
     fetchEmergencies();
     fetchAcceptedEmergencies();
-  }, [apiBase, token]);
+  }, [token]);
 
   const handleAccept = async (emergencyId) => {
     try {

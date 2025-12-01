@@ -57,7 +57,7 @@ function DoctorAppointments() {
      if (appointmentDate) url += `?date=${appointmentDate}`;
       const res = await fetch(url, {
         method: "GET",
-        headers: buildAuthHeaders
+        headers: buildAuthHeaders(),
       });
       if (!res.ok) throw new Error("Failed to fetch appointments");
       const data = await res.json();

@@ -28,8 +28,8 @@ function MedicalHistoryPage() {
       </div>
 
       <div className="tab-content">
-        {activeTab === "history" && <PatientHistory apiBase={apiBase} />}
-        {activeTab === "records" && <PatientMedicalRecords apiBase={apiBase} />}
+        {activeTab === "history" && <PatientHistory />}
+        {activeTab === "records" && <PatientMedicalRecords/>}
       </div>
     </div>
   );

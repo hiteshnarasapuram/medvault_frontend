@@ -24,7 +24,7 @@ function AccessManagement() {
       const records = recordRes.ok ? await recordRes.json() : [];
 
       const historyRes = await fetch(`${API_BASE}/api/patient/history/requests`, {
-        headers: buildAuthHeaders(token),
+        headers: buildAuthHeaders(),
       });
       const histories = historyRes.ok ? await historyRes.json() : [];
 
@@ -97,6 +97,13 @@ function AccessManagement() {
       setMessage("Error rejecting history access.");
     }
   };
+
+  useEffect(() => {
+  if (message) {
+    const timer = setTimeout(() => setMessage(""), 5000);
+    return () => clearTimeout(timer);
+  }
+}, [message]);
 
   if (loading) return <p>Loading...</p>;
 
