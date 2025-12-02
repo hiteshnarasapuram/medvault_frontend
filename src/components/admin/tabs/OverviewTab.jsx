@@ -33,6 +33,15 @@ function OverviewTab() {
   const [pendingDoctors, setPendingDoctors] = useState([]);
   // const [loadingPending, setLoadingPending] = useState(false);
 
+  const safeJson = async (res) => {
+  const text = await res.text();
+  try {
+      return text ? JSON.parse(text) : [];
+  } catch {
+      return [];
+  }
+  };
+
   const today = new Date().toISOString().split("T")[0]; 
 
   const totalAppointments = appointments.length;
@@ -85,42 +94,81 @@ function OverviewTab() {
 
 
 
+  // const fetchData = async () => {
+  //   try {
+  //     // Patients
+  //     const resPatients = await fetch(`${API_BASE}/api/admin/patients`, { headers: buildAuthHeaders() });
+  //     const patientsData = await resPatients.json();
+  //     setPatients(patientsData);
+
+  //     // Doctors
+  //     const resDoctors = await fetch(`${API_BASE}/api/admin/doctors`, { headers: buildAuthHeaders() });
+  //     const doctorsData = await resDoctors.json();
+  //     setDoctors(doctorsData);
+
+  //     // Appointments
+  //     const resAppointments = await fetch(`${API_BASE}/api/admin/appointments`, { headers: buildAuthHeaders() });
+  //     const appointmentsData = await resAppointments.json();
+  //     setAppointments(appointmentsData);
+
+  //     // Pending Users
+  //     const resPendingUsers = await fetch(`${API_BASE}/api/admin/pending`, { headers: buildAuthHeaders() });
+  //     const usersData = await resPendingUsers.json();
+  //     setPendingUsers(usersData);
+
+  //     // Pending Doctors
+  //     const resPendingDoctors = await fetch(`${API_BASE}/api/admin/doctors/pending`, { headers: buildAuthHeaders() });
+  //     const doctorsPendingData = await resPendingDoctors.json();
+  //     setPendingDoctors(doctorsPendingData);
+  //   } catch (err) {
+  //     console.error(err);
+  //     Swal.fire({
+  //       title: "Error",
+  //       text: "Failed to load admin data: " + (err.message || ""),
+  //       icon: "error",
+  //       confirmButtonText: "OK",
+  //     });
+  //   }
+  // };
+
   const fetchData = async () => {
-    try {
-      // Patients
-      const resPatients = await fetch(`${API_BASE}/api/admin/patients`, { headers: buildAuthHeaders() });
-      const patientsData = await resPatients.json();
-      setPatients(patientsData);
+  try {
+    // Patients
+    const resPatients = await fetch(`${API_BASE}/api/admin/patients`, { headers: buildAuthHeaders() });
+    const patientsData = await safeJson(resPatients);
+    setPatients(Array.isArray(patientsData) ? patientsData : []);
 
-      // Doctors
-      const resDoctors = await fetch(`${API_BASE}/api/admin/doctors`, { headers: buildAuthHeaders() });
-      const doctorsData = await resDoctors.json();
-      setDoctors(doctorsData);
+    // Doctors
+    const resDoctors = await fetch(`${API_BASE}/api/admin/doctors`, { headers: buildAuthHeaders() });
+    const doctorsData = await safeJson(resDoctors);
+    setDoctors(Array.isArray(doctorsData) ? doctorsData : []);
 
-      // Appointments
-      const resAppointments = await fetch(`${API_BASE}/api/admin/appointments`, { headers: buildAuthHeaders() });
-      const appointmentsData = await resAppointments.json();
-      setAppointments(appointmentsData);
+    // Appointments
+    const resAppointments = await fetch(`${API_BASE}/api/admin/appointments`, { headers: buildAuthHeaders() });
+    const appointmentsData = await safeJson(resAppointments);
+    setAppointments(Array.isArray(appointmentsData) ? appointmentsData : []);
 
-      // Pending Users
-      const resPendingUsers = await fetch(`${API_BASE}/api/admin/pending`, { headers: buildAuthHeaders() });
-      const usersData = await resPendingUsers.json();
-      setPendingUsers(usersData);
+    // Pending Users
+    const resPendingUsers = await fetch(`${API_BASE}/api/admin/pending`, { headers: buildAuthHeaders() });
+    const usersData = await safeJson(resPendingUsers);
+    setPendingUsers(Array.isArray(usersData) ? usersData : []);
 
-      // Pending Doctors
-      const resPendingDoctors = await fetch(`${API_BASE}/api/admin/doctors/pending`, { headers: buildAuthHeaders() });
-      const doctorsPendingData = await resPendingDoctors.json();
-      setPendingDoctors(doctorsPendingData);
-    } catch (err) {
-      console.error(err);
-      Swal.fire({
-        title: "Error",
-        text: "Failed to load admin data: " + (err.message || ""),
-        icon: "error",
-        confirmButtonText: "OK",
-      });
-    }
-  };
+    // Pending Doctors
+    const resPendingDoctors = await fetch(`${API_BASE}/api/admin/doctors/pending`, { headers: buildAuthHeaders() });
+    const doctorsPendingData = await safeJson(resPendingDoctors);
+    setPendingDoctors(Array.isArray(doctorsPendingData) ? doctorsPendingData : []);
+    
+  } catch (err) {
+    console.error(err);
+    Swal.fire({
+      title: "Error",
+      text: "Failed to load admin data: " + (err.message || ""),
+      icon: "error",
+      confirmButtonText: "OK",
+    });
+  }
+};
+
 
   useEffect(() => {
     fetchData();

@@ -18,6 +18,17 @@ function PatientsTab() {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 15;
 
+
+  const safeJson = async (res) => {
+  const text = await res.text();
+  try {
+    return text ? JSON.parse(text) : [];
+  } catch {
+    return [];
+  }
+};
+
+
   const fetchPatients = async () => {
     setLoading(true);
     setListError("");
@@ -29,8 +40,10 @@ function PatientsTab() {
         const msg = await safeMessage(res);
         throw new Error(msg || `Failed to fetch patients (${res.status})`);
       }
-      const json = await res.json();
-      setPatients(json);
+      // const json = await res.json();
+      // setPatients(json);
+      const patientsData = await safeJson(res);  // <-- FIXED
+    setPatients(Array.isArray(patientsData) ? patientsData : []);
     } catch (e) {
       setListError(e.message || "Unable to load patients.");
       setPatients([]);

@@ -20,6 +20,15 @@ function PendingRequestsTab() {
   const [modalTitle, setModalTitle] = useState("");
   const [modalUrl, setModalUrl] = useState("");
 
+  const safeJson = async (res) => {
+  const text = await res.text();
+  try {
+      return text ? JSON.parse(text) : [];
+  } catch {
+    return [];
+  }
+  };
+
   const fetchData = async () => {
     setLoading(true);
     setError("");
@@ -35,8 +44,11 @@ function PendingRequestsTab() {
       if (!res.ok)
         throw new Error((await safeMessage(res)) || "Failed to fetch pending data");
 
-      const data = await res.json();
-      setPendingRequests(data);
+      // const data = await res.json();
+      // setPendingRequests(data);
+      const data = await safeJson(res);
+      setPendingRequests(Array.isArray(data) ? data : []);
+
     } catch (e) {
       // setError(e.message || "Error loading data");
     Swal.fire({

@@ -3,19 +3,16 @@ import { API_BASE, buildAuthHeaders } from "../../../utils";
 import "../../../styles/LogsTab.css";
 import Swal from "sweetalert2";
 
-// const API_BASE = "http://localhost:8080";
-// const buildAuthHeaders = () => {
-//   const token =
-//     localStorage.getItem("token") ||
-//     localStorage.getItem("authToken") ||
-//     localStorage.getItem("jwt") ||
-//     "";
-//   return {
-//     Accept: "application/json",
-//     "Content-Type": "application/json",
-//     ...(token ? { Authorization: `Bearer ${token}` } : {}),
-//   };
-// };
+
+
+const safeJson = async (res) => {
+  const text = await res.text();
+  try {
+    return text ? JSON.parse(text) : [];
+  } catch {
+    return [];
+  }
+};
 
 const safeMessage = async (res) => {
   try {
@@ -46,8 +43,8 @@ function LogsTab() {
         const msg = await safeMessage(res);
         throw new Error(msg || "Failed to fetch logs.");
       }
-      const json = await res.json();
-      setLogs(json);
+      const logsData = await safeJson(res);
+      setLogs(Array.isArray(logsData) ? logsData : []);
     } catch (err) {
       setError(err.message || "Error fetching logs.");
       setLogs([]);

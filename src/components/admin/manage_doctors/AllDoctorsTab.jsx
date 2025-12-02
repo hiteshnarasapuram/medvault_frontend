@@ -18,6 +18,15 @@ function DoctorsTab() {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 15;
 
+  const safeJson = async (res) => {
+  const text = await res.text();
+  try {
+    return text ? JSON.parse(text) : [];
+  } catch {
+    return [];
+  }
+};
+
   const fetchDoctors = async () => {
     setLoading(true);
     setListError("");
@@ -29,8 +38,11 @@ function DoctorsTab() {
         const msg = await safeMessage(res);
         throw new Error(msg || `Failed to fetch doctors (${res.status})`);
       }
-      const json = await res.json();
-      setDoctors(json);
+      // const json = await res.json();
+      // setDoctors(json);
+      const doctorsData = await safeJson(res);
+      setDoctors(Array.isArray(doctorsData) ? doctorsData : []);
+
     } catch (e) {
       setListError(e.message || "Unable to load doctors.");
       setDoctors([]);
